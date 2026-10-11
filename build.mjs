@@ -41,6 +41,21 @@ function renderPriceTables() {
     .join('\n');
 }
 
+function renderCombos() {
+  return (prices.combos || [])
+    .filter((c) => !c.hidden)
+    .map(
+      (c) => `<article class="combo">
+  <p class="combo-kicker">COMBO</p>
+  <h3>${c.name.toUpperCase()}</h3>
+  <p class="combo-price">${c.price}</p>
+  <ul class="bubbles">${c.items.map(([n, t]) => `<li><span>${t}<b>${n}</b></span></li>`).join('')}</ul>
+  <p class="combo-gift"><span>Ưu đãi:</span> ${c.gift}</p>
+</article>`
+    )
+    .join('\n');
+}
+
 function renderCourses() {
   return courses
     .map(
@@ -78,6 +93,7 @@ const tokens = {
   '{{PRICE_TABLES}}': renderPriceTables(),
   '{{PRICE_UPDATED}}': prices.updated,
   '{{COURSES}}': renderCourses(),
+  '{{COMBOS}}': renderCombos(),
   '{{FORM_ENDPOINT}}': site.formEndpoint,
   '{{YEAR}}': String(new Date().getFullYear()),
 };
