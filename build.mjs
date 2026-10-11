@@ -56,6 +56,19 @@ function renderLocations(compact = false) {
     .join('\n');
 }
 
+function renderSocial(cls = '') {
+  const s = site.social;
+  const items = [
+    ['zalo', s.zaloOA, 'Zalo OA Thẩm mỹ DONA'],
+    ['facebook', s.facebookClinic, 'Facebook Thẩm mỹ DONA'],
+    ['facebook', s.facebookDoctor, 'Facebook BS Đỗ Thị Nga'],
+    ['tiktok', s.tiktok, 'TikTok @bacsidona'],
+  ];
+  return `<ul class="social-links ${cls}">${items
+    .map(([k, href, label]) => `<li><a class="soc soc-${k}" href="${href}" target="_blank" rel="noopener"><span class="soc-dot" aria-hidden="true"></span>${label}</a></li>`)
+    .join('')}</ul>`;
+}
+
 function renderCombos() {
   return (prices.combos || [])
     .filter((c) => !c.hidden)
@@ -112,6 +125,9 @@ const tokens = {
   '{{PRICE_UPDATED}}': prices.updated,
   '{{COURSES}}': renderCourses(),
   '{{COMBOS}}': renderCombos(),
+  '{{SOCIAL}}': renderSocial(),
+  '{{SOCIAL_DARK}}': renderSocial('on-dark'),
+  '{{ZALO_OA}}': site.social.zaloOA,
   '{{LOCATIONS}}': renderLocations(),
   '{{LOCATIONS_COMPACT}}': renderLocations(true),
   '{{LOC1}}': site.locations[0].name + ', ' + site.locations[0].address,
