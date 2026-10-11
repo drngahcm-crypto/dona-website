@@ -19,5 +19,24 @@
   },
   "doctor": {
     "license": "[đang cập nhật]"
-  }
+  },
+  "locations": [
+    {
+      "no": "Cơ sở 1",
+      "name": "DONA Beauty & Spa",
+      "address": "1A251 Trần Văn Giàu, xã Phạm Văn Hai, Bình Chánh, TP.HCM",
+      "services": "Chăm sóc da, điều trị da cơ bản, triệt lông, gội đầu dưỡng sinh, phun xăm thẩm mỹ",
+      "hours": "[đang cập nhật]",
+      "maps": "https://www.google.com/maps/search/?api=1&query=DONA+BEAUTY+%26+SPA+1A251+Tr%E1%BA%A7n+V%C4%83n+Gi%C3%A0u+B%C3%ACnh+Ch%C3%A1nh"
+    },
+    {
+      "no": "Cơ sở 2",
+      "name": "Phòng khám An Khang – Thẩm mỹ DONA",
+      "address": "314 Đường số 1, P. An Lạc, TP.HCM (Bình Trị Đông B – Bình Tân cũ)",
+      "services": "Khám da liễu, điều trị mụn, nám, sẹo, laser, trẻ hóa và chăm sóc da",
+      "hours": "[đang cập nhật]",
+      "maps": "https://share.google/qdEH79ujNbN6bS9Th",
+      "licensed": true
+    }
+  ]
 }

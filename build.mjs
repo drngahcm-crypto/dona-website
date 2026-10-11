@@ -41,6 +41,21 @@ function renderPriceTables() {
     .join('\n');
 }
 
+function renderLocations(compact = false) {
+  return site.locations
+    .map(
+      (l) => `<article class="place">
+  <p class="place-no">${l.no}</p>
+  <h3>${l.name}</h3>
+  <p>${l.address}</p>
+  ${compact ? '' : `<p>${l.services}</p>`}
+  <p class="place-hours">Thời gian hoạt động: ${l.hours}</p>
+  <a href="${l.maps}" target="_blank" rel="noopener">Xem đường đi trên Google Maps</a>
+</article>`
+    )
+    .join('\n');
+}
+
 function renderCombos() {
   return (prices.combos || [])
     .filter((c) => !c.hidden)
@@ -89,11 +104,16 @@ const tokens = {
   '{{SPA_NAME}}': site.spa.name,
   '{{SPA_ADDRESS}}': site.spa.address,
   '{{SPA_HOURS}}': site.spa.hours,
+  '{{SPA_MAPS}}': site.locations[0].maps,
   '{{DOCTOR_LICENSE}}': site.doctor.license,
   '{{PRICE_TABLES}}': renderPriceTables(),
   '{{PRICE_UPDATED}}': prices.updated,
   '{{COURSES}}': renderCourses(),
   '{{COMBOS}}': renderCombos(),
+  '{{LOCATIONS}}': renderLocations(),
+  '{{LOCATIONS_COMPACT}}': renderLocations(true),
+  '{{LOC1}}': site.locations[0].name + ', ' + site.locations[0].address,
+  '{{LOC2}}': site.locations[1].name + ', ' + site.locations[1].address,
   '{{FORM_ENDPOINT}}': site.formEndpoint,
   '{{YEAR}}': String(new Date().getFullYear()),
 };

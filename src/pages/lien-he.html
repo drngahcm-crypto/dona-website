@@ -22,8 +22,9 @@
       <div class="field">
         <label for="co_so">Cơ sở muốn đến</label>
         <select id="co_so" name="co_so">
-          <option>Phòng khám An Khang – 314 Đường số 1, An Lạc</option>
-          <option>DONA Beauty & Spa – Trần Văn Giàu, Bình Chánh</option>
+          <option>Cơ sở 1 – DONA Beauty & Spa, Trần Văn Giàu, Bình Chánh</option>
+          <option>Cơ sở 2 – Phòng khám An Khang, 314 Đường số 1, An Lạc</option>
+          <option>Cơ sở nào cũng được, gần nhất với tôi</option>
         </select>
       </div>
       <div class="field">
@@ -43,14 +44,8 @@
       <div class="form-status" role="status" hidden></div>
     </form>
     <div>
-      <div class="place" style="margin-bottom:20px">
-        <h3>{{CLINIC_NAME}}</h3>
-        <p>{{CLINIC_ADDRESS}}<br>Thời gian hoạt động: {{CLINIC_HOURS}}</p>
-        <a href="{{MAPS_URL}}" target="_blank" rel="noopener">Xem đường đi trên Google Maps</a>
-      </div>
-      <div class="place" style="margin-bottom:20px">
-        <h3>{{SPA_NAME}}</h3>
-        <p>{{SPA_ADDRESS}}<br>Thời gian hoạt động: {{SPA_HOURS}}</p>
+      <div class="place-stack">
+{{LOCATIONS_COMPACT}}
       </div>
       <div class="place">
         <h3>Liên hệ trực tiếp</h3>

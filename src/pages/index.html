@@ -57,7 +57,7 @@
 
 <section class="section">
   <div class="wrap doctor">
-    <img class="doctor-photo" src="assets/img/bs-nga-chan-dung.jpg" alt="BS.CKI Đỗ Thị Nga" width="400" height="600" loading="lazy">
+    <picture><source srcset="assets/img/bs-nga-chan-dung.webp" type="image/webp"><img class="doctor-photo" src="assets/img/bs-nga-chan-dung.jpg" alt="BS.CKI Đỗ Thị Nga" width="1000" height="1500" loading="lazy"></picture>
     <div>
       <h2>Bác sĩ trực tiếp thăm khám từng ca</h2>
       <p class="lead">BS.CKI Đỗ Thị Nga đồng sáng lập DONA năm 2021 và là bác sĩ duy nhất thăm khám, lên phác đồ cho khách hàng tại phòng khám.</p>
@@ -94,17 +94,7 @@
   <div class="wrap">
     <div class="section-head"><h2>Hai cơ sở của DONA</h2></div>
     <div class="grid-2">
-      <div class="place">
-        <h3>{{CLINIC_NAME}}</h3>
-        <p>{{CLINIC_ADDRESS}}</p>
-        <p>Thăm khám da liễu, điều trị mụn, nám, sẹo, laser, trẻ hóa và chăm sóc da.</p>
-        <a href="{{MAPS_URL}}" target="_blank" rel="noopener">Xem đường đi</a>
-      </div>
-      <div class="place">
-        <h3>{{SPA_NAME}}</h3>
-        <p>{{SPA_ADDRESS}}</p>
-        <p>Chăm sóc da, triệt lông, gội đầu dưỡng sinh và phun xăm thẩm mỹ.</p>
-      </div>
+{{LOCATIONS}}
     </div>
   </div>
 </section>

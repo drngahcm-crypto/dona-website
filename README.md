@@ -20,3 +20,8 @@ Trang tĩnh thuần HTML/CSS/JS, không cần thư viện ngoài. Chạy đượ
 
 ## Form đặt lịch
 Điền URL nhận dữ liệu (Google Apps Script hoặc Formspree) vào `formEndpoint` trong `src/data/site.json`. Khi để trống, form báo rõ là chưa gửi và hướng khách gọi hotline.
+
+## Logo và ảnh
+- Logo chính trên web: **bản teal** (`src/assets/img/logo-mark-teal.png`, `logo-dona-teal.png`, bản trắng `logo-dona-white.png` cho nền tối) — xuất từ file Canva "LOGO DONA".
+- Bản vàng và hồng lưu ở `brand/`, chỉ dùng cho tình huống riêng (voucher, sự kiện, thiệp).
+- Ảnh BS Nga lấy từ file gốc 4000×6000 trên Drive, thu về 1000–1600px, có cả bản WebP.
