@@ -175,7 +175,8 @@ body.v2 .v2-svc-ask h3 { color: #fff; } body.v2 .v2-svc-ask p { color: #cfe0dd; 
 
 /* Thanh liên hệ nổi */
 .v2-dock { position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%); z-index: 30; display: flex; align-items: center; gap: 6px; padding: 6px 6px 6px 22px; border-radius: 999px; background: rgba(255, 255, 255, .96); border: 1px solid var(--line); box-shadow: 0 14px 34px -14px rgba(31, 43, 42, .35); }
-.v2-dock span { font: 600 1rem var(--serif); margin-right: 8px; color: var(--ink); }
+.v2-dock span { font: 600 1rem var(--serif); margin-right: 8px; color: var(--ink); white-space: nowrap; }
+.v2-dock a { white-space: nowrap; }
 .v2-dock a { display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border-radius: 999px; background: var(--sage); color: var(--teal-dark); font-weight: 600; font-size: .9rem; text-decoration: none; }
 .v2-dock a:first-of-type { background: var(--teal-dark); color: #fff; }
 .v2-dock a:hover { filter: brightness(.96); }
