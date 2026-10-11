@@ -95,6 +95,14 @@ function renderCombos() {
     .join('\n');
 }
 
+function renderComboFeature() {
+  const c = (prices.combos || []).find((x) => !x.hidden);
+  if (!c) return '';
+  return `<p class="v3-kicker">Combo liệu trình</p>
+      <h2>Combo ${c.name} <span>${c.price.replace(' VNĐ', ' đ')}</span></h2>
+      <p>${c.items.map(([n, t]) => `${n} ${t.toLowerCase()}`).join(' · ')}. ${c.gift}.</p>`;
+}
+
 function renderCourses() {
   return courses
     .map(
@@ -136,6 +144,7 @@ const tokens = {
   '{{PRICE_UPDATED}}': prices.updated,
   '{{COURSES}}': renderCourses(),
   '{{COMBOS}}': renderCombos(),
+  '{{COMBO_FEATURE}}': renderComboFeature(),
   '{{PRICE_FROM}}': renderPriceFrom(),
   '{{SOCIAL}}': renderSocial(),
   '{{SOCIAL_DARK}}': renderSocial('on-dark'),
@@ -172,27 +181,30 @@ for (const file of readdirSync('src/pages').filter((f) => f.endsWith('.html'))) 
   writeFileSync(join('dist', file), html);
 }
 
-// ---- Bản v2: giao diện mới ở /v2/, dùng chung dữ liệu và nội dung trang con với v1 ----
-const v2Partial = (name) => readFileSync(join('src/v2/partials', name), 'utf8');
-mkdirSync('dist/v2', { recursive: true });
-for (const file of readdirSync('src/pages').filter((f) => f.endsWith('.html'))) {
-  const own = join('src/v2/pages', file);
-  const raw = readFileSync(existsSync(own) ? own : join('src/pages', file), 'utf8');
-  const meta = JSON.parse(raw.match(/<!--meta(.*?)-->/s)[1]);
-  const body = raw.replace(/<!--meta.*?-->/s, '').replace(/(src|href|srcset)="assets\//g, '$1="../assets/');
-  const nav = navItems
-    .map(([href, label]) => `<li><a href="${href}"${href === file ? ' aria-current="page"' : ''}>${label}</a></li>`)
-    .join('');
-  const html = fill(
-    v2Partial('layout.html')
-      .replace('{{HEADER}}', v2Partial('header.html').replace('{{NAV}}', nav))
-      .replace('{{FOOTER}}', v2Partial('footer.html'))
-      .replace('{{BODY}}', body)
-      .replace('{{TITLE}}', meta.title)
-      .replace('{{DESCRIPTION}}', meta.description)
-      .replace('{{ROBOTS}}', '<meta name="robots" content="noindex, nofollow">')
-  ).replace(/(src|href|srcset)="assets\//g, '$1="../assets/');
-  writeFileSync(join('dist/v2', file), html);
+// ---- Bản v2 (/v2/) và v3 (/v3/): giao diện khác, dùng chung dữ liệu; trang con nào chưa có bản riêng thì dùng nội dung v1 ----
+for (const v of ['v2', 'v3']) {
+  const vPartial = (name) => readFileSync(join(`src/${v}/partials`, name), 'utf8');
+  mkdirSync(`dist/${v}`, { recursive: true });
+  for (const file of readdirSync('src/pages').filter((f) => f.endsWith('.html'))) {
+    const own = join(`src/${v}/pages`, file);
+    const raw = readFileSync(existsSync(own) ? own : join('src/pages', file), 'utf8');
+    const meta = JSON.parse(raw.match(/<!--meta(.*?)-->/s)[1]);
+    const body = raw.replace(/<!--meta.*?-->/s, '');
+    const nav = navItems
+      .map(([href, label]) => `<li><a href="${href}"${href === file ? ' aria-current="page"' : ''}>${label}</a></li>`)
+      .join('');
+    const html = fill(
+      vPartial('layout.html')
+        .replace('{{HEADER}}', vPartial('header.html').replace('{{NAV}}', nav))
+        .replace('{{FOOTER}}', vPartial('footer.html'))
+        .replace('{{BODY}}', body)
+        .replace('{{TITLE}}', meta.title)
+        .replace('{{DESCRIPTION}}', meta.description)
+        // bản thử nghiệm luôn noindex
+        .replace('{{ROBOTS}}', '<meta name="robots" content="noindex, nofollow">')
+    ).replace(/(src|href|srcset)="assets\//g, '$1="../assets/');
+    writeFileSync(join(`dist/${v}`, file), html);
+  }
 }
 
 writeFileSync('dist/robots.txt', DEMO ? 'User-agent: *\nDisallow: /\n' : `User-agent: *\nAllow: /\nSitemap: ${site.domain}/sitemap.xml\n`);
