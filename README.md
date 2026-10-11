@@ -34,3 +34,7 @@ Trang tĩnh thuần HTML/CSS/JS, không cần thư viện ngoài. Chạy đượ
 ## Bản v3 (/v3/)
 
 Bố cục theo bản phác Claude Design "DONA – Trang chủ v3" (tham khảo alchemy43.com): hero tối toàn chiều ngang, chữ Playfair Display, nút vuông, các dải màu xen kẽ. Trang chủ riêng ở `src/v3/pages/index.html`, giao diện ở `src/assets/css/v3.css`; các trang con dùng lại nội dung v1. Màu nằm trong biến CSS đầu file `v3.css`, đổi sang tông khác (ví dụ đỏ rượu của bản phác) chỉ cần sửa vài biến.
+
+### v3: các chương trình bán hàng
+
+Trang chủ v3 xếp theo thang khách hàng (buổi đầu → liệu trình nhẹ → thành viên → giới thiệu), cùng 6 trang riêng của v3: `uu-dai-khach-moi`, `lieu-trinh-nhe`, `thanh-vien`, `gioi-thieu-ban-be`, `goi-tet`, `thanh-toan`. Mọi con số (mức giảm, giá thẻ, tiền thưởng, lộ trình Tết) nằm trong `src/data/chuong-trinh.json`; giá dịch vụ lấy từ `bang-gia.json` theo tên. Khi DONA chốt thể lệ, đổi `"approved": true` để bỏ dòng "đề xuất, chưa áp dụng". Mọi trang ưu đãi tự chèn khối thông tin giấy phép theo Nghị định 342/2025.

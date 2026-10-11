@@ -1,0 +1,48 @@
+{
+  "_ghi_chu": "Các chương trình bán hàng theo tài liệu 'Mô hình kinh doanh DONA theo alchemy43'. Khi DONA chốt mức ưu đãi thì đổi approved thành true để bỏ dòng 'Đề xuất, chưa áp dụng'. Mọi giá dịch vụ lấy từ bang-gia.json theo tên.",
+  "approved": false,
+  "newClient": {
+    "discount": 30,
+    "examples": ["Chăm sóc da cơ bản", "Ánh sáng IPL / DPL", "Lấy nhân mụn trung bình", "Peel mụn", "Peel nám"]
+  },
+  "light": {
+    "maxPrice": 500,
+    "items": [
+      ["Chăm sóc da cơ bản", "45 phút", "Làm sạch sâu, cân bằng và dưỡng ẩm"],
+      ["Điện di vitamin C", "45 phút", "Hỗ trợ da sáng và đều màu"],
+      ["Ánh sáng IPL / DPL", "30 phút", "Hỗ trợ giảm mụn viêm, đỏ da"],
+      ["Lấy nhân mụn trung bình", "45 phút", "Lấy nhân chuẩn y khoa, hạn chế thâm"],
+      ["Làm dịu da kích ứng", "45 phút", "Cho da đỏ, rát, nhạy cảm"],
+      ["Thanh lọc, detox da", "45 phút", "Làm sạch và thông thoáng lỗ chân lông"],
+      ["Nâng cơ chống lão hóa", "60 phút", "Chăm sóc nâng cơ, săn chắc da"],
+      ["Phục hồi da nhạy cảm", "45 phút", "Phục hồi hàng rào bảo vệ da"]
+    ]
+  },
+  "membership": {
+    "monthly": 990000,
+    "quarterly": 2970000,
+    "discount": 15,
+    "pilotSeats": 30,
+    "quarterBonus": "1 buổi chăm sóc da cơ bản mỗi quý",
+    "anniversary": "1 buổi ánh sáng IPL",
+    "cancel": "Nhắn Zalo OA để hủy, DONA phản hồi trong 48 giờ. Số dư còn lại được dùng tiếp trong 12 tháng."
+  },
+  "referral": {
+    "reward": 200000
+  },
+  "tet": {
+    "name": "Rạng rỡ đón Tết 2027",
+    "openFrom": "cuối tháng 10/2026",
+    "steps": [
+      ["12 tuần trước", "Khám, soi da, bắt đầu peel hoặc điều trị mụn, nám theo tình trạng, kèm sản phẩm dùng tại nhà"],
+      ["8–10 tuần trước", "2–3 buổi toning hoặc laser theo chỉ định của bác sĩ"],
+      ["4 tuần trước", "Cryo căng bóng sáng da"],
+      ["1 tuần trước", "Chăm sóc da hoặc điện di vitamin C để da ở trạng thái đẹp nhất"]
+    ]
+  },
+  "installment": {
+    "minPackage": 3000000,
+    "parts": "2–3 đợt"
+  },
+  "giftCards": [500000, 1000000, 2000000]
+}

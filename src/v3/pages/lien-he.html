@@ -1,0 +1,63 @@
+<!--meta {"title": "Liên hệ và đặt lịch – Thẩm mỹ DONA", "description": "Đặt lịch thăm khám với BS.CKI Đỗ Thị Nga. Hotline và Zalo 0367 661 115. Phòng khám An Khang – Thẩm mỹ DONA, 314 Đường số 1, P. An Lạc, TP.HCM."}-->
+<section class="page-head">
+  <div class="wrap">
+    <h1>Liên hệ và đặt lịch</h1>
+    <p class="lead">Gọi hoặc nhắn Zalo <a href="tel:{{HOTLINE_TEL}}">{{HOTLINE}}</a>, hoặc để lại thông tin để phòng khám gọi lại xác nhận giờ hẹn.</p>
+  </div>
+</section>
+<section class="section" style="padding-top:0; border-top:0">
+  <div class="wrap grid-2">
+    <form class="form" id="form-dat-lich" data-endpoint="{{FORM_ENDPOINT}}" novalidate>
+      <h2 id="dat-lich" style="font-size:1.6rem">Đặt lịch thăm khám</h2>
+      <div class="field">
+        <label for="ho_ten">Họ và tên</label>
+        <input id="ho_ten" name="ho_ten" autocomplete="name" required>
+        <span class="error" data-error-for="ho_ten"></span>
+      </div>
+      <div class="field">
+        <label for="so_dien_thoai">Số điện thoại</label>
+        <input id="so_dien_thoai" name="so_dien_thoai" type="tel" inputmode="tel" autocomplete="tel" required>
+        <span class="error" data-error-for="so_dien_thoai"></span>
+      </div>
+      <div class="field">
+        <label for="co_so">Cơ sở muốn đến</label>
+        <select id="co_so" name="co_so">
+          <option>Cơ sở 1 – DONA Beauty & Spa, Trần Văn Giàu, Bình Chánh</option>
+          <option>Cơ sở 2 – Phòng khám An Khang, 314 Đường số 1, An Lạc</option>
+          <option>Cơ sở nào cũng được, gần nhất với tôi</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="van_de">Vấn đề da bạn muốn điều trị</label>
+        <input id="van_de" name="van_de" placeholder="Ví dụ: nám hai bên má, mụn viêm ở cằm">
+        <span class="hint">Không cần ghi thông tin bệnh lý chi tiết, bác sĩ sẽ hỏi khi thăm khám.</span>
+      </div>
+      <div class="field">
+        <label for="thoi_gian">Thời gian mong muốn</label>
+        <input id="thoi_gian" name="thoi_gian" placeholder="Ví dụ: sáng thứ Bảy">
+      </div>
+      <div class="field">
+        <label for="gioi_thieu">Ai giới thiệu bạn? <span class="hint">(không bắt buộc)</span></label>
+        <input id="gioi_thieu" name="gioi_thieu" type="tel" inputmode="tel" placeholder="Số điện thoại người giới thiệu">
+      </div>
+      <div class="field">
+        <label class="consent"><input type="checkbox" name="dong_y" id="dong_y"> Tôi đồng ý để Thẩm mỹ DONA dùng số điện thoại này liên hệ xác nhận lịch hẹn.</label>
+        <span class="error" data-error-for="dong_y"></span>
+      </div>
+      <button class="btn btn-primary" type="submit">Gửi yêu cầu đặt lịch</button>
+      <div class="form-status" role="status" hidden></div>
+    </form>
+    <div>
+      <div class="place-stack">
+{{LOCATIONS_COMPACT}}
+      </div>
+      <div class="place">
+        <h3>Liên hệ trực tiếp</h3>
+        <p>Hotline / Zalo: <a href="tel:{{HOTLINE_TEL}}">{{HOTLINE}}</a><br>Email: <a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+        <h3 style="margin-top:20px">Kết nối với DONA</h3>
+        {{SOCIAL}}
+        <div class="qr"><img src="assets/img/qr-zalo-oa.png" alt="Mã QR Zalo OA Thẩm mỹ DONA" width="160" height="160" loading="lazy"><p>Quét mã để nhắn tin Zalo OA Thẩm mỹ DONA</p></div>
+      </div>
+    </div>
+  </div>
+</section>

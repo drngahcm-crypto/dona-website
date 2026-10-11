@@ -6,6 +6,7 @@ import { join } from 'node:path';
 const site = JSON.parse(readFileSync('src/data/site.json', 'utf8'));
 const prices = JSON.parse(readFileSync('src/data/bang-gia.json', 'utf8'));
 const courses = JSON.parse(readFileSync('src/data/academy.json', 'utf8'));
+const promo = JSON.parse(readFileSync('src/data/chuong-trinh.json', 'utf8'));
 
 // DEMO=true: chặn Google lập chỉ mục. Đặt DEMO=false khi chạy website thật trên thammydona.com.
 const DEMO = (process.env.DEMO ?? 'true') !== 'false';
@@ -21,6 +22,69 @@ const navItems = [
   ['case-lam-sang.html', 'Case lâm sàng'],
   ['bang-gia.html', 'Bảng giá'],
   ['academy.html', 'DONA Academy'],
+  ['lien-he.html', 'Liên hệ'],
+];
+
+// ---- Chương trình bán hàng (v3) ----
+const dong = (n) => n.toLocaleString('vi-VN') + ' đ';
+const priceOf = (name) => {
+  for (const g of prices.groups) {
+    if (g.hidden) continue;
+    const r = g.rows.find((x) => x[0] === name);
+    if (r && typeof r[1] === 'number') return r[1] * 1000;
+  }
+  throw new Error('Không tìm thấy giá cho: ' + name);
+};
+function renderNewClientRows() {
+  const d = promo.newClient.discount;
+  return promo.newClient.examples
+    .map((n) => {
+      const p = priceOf(n);
+      return `<tr><td>${n}</td><td>${dong(p)}</td><td><b>${dong(Math.round((p * (100 - d)) / 100 / 1000) * 1000)}</b></td></tr>`;
+    })
+    .join('');
+}
+function renderLightMenu() {
+  return promo.light.items
+    .map(([n, t, desc]) => {
+      const p = priceOf(n);
+      if (p > promo.light.maxPrice * 1000) throw new Error('Liệu trình nhẹ vượt giá trần: ' + n);
+      return `<li class="v3-light"><div><h3>${n}</h3><p>${desc}</p></div><span class="v3-light-time">${t}</span><b>${dong(p)}</b></li>`;
+    })
+    .join('');
+}
+function renderTetSteps() {
+  return promo.tet.steps.map(([w, t]) => `<li><b>${w}</b><span>${t}</span></li>`).join('');
+}
+function renderInstallPackages() {
+  const min = promo.installment.minPackage;
+  const items = (prices.combos || [])
+    .filter((c) => !c.hidden)
+    .map((c) => [`Combo ${c.name}`, Number(c.price.replace(/\D/g, ''))]);
+  items.push(['Nâng cơ RF toàn mặt', priceOf('Nâng cơ RF toàn mặt')]);
+  return items
+    .filter(([, p]) => p >= min)
+    .map(([n, p]) => `<li><span>${n}</span><b>${dong(p)}</b></li>`)
+    .join('');
+}
+const offerNote = promo.approved
+  ? ''
+  : '<p class="v3-draft">Bản đề xuất, chưa áp dụng: mức ưu đãi và thể lệ đang chờ DONA duyệt.</p>';
+const legalBlock = `<aside class="v3-legal" aria-label="Thông tin cơ sở khám chữa bệnh">
+  <p><b>${site.clinic.name}</b> · ${site.clinic.address}</p>
+  <p>Giấy phép hoạt động số: ${site.clinic.license} · Phạm vi hoạt động chuyên môn: ${site.clinic.scope} · Thời gian hoạt động: ${site.clinic.hours}</p>
+  <p>Kết quả phụ thuộc cơ địa từng người. Bác sĩ chỉ định liệu trình sau khi thăm khám.</p>
+</aside>`;
+
+// Menu v3 xếp theo thang khách hàng: thử, quay lại, thành viên
+const navV3 = [
+  ['index.html', 'Trang chủ'],
+  ['uu-dai-khach-moi.html', 'Ưu đãi khách mới'],
+  ['lieu-trinh-nhe.html', 'Liệu trình nhẹ'],
+  ['dich-vu.html', 'Dịch vụ'],
+  ['bang-gia.html', 'Bảng giá'],
+  ['thanh-vien.html', 'Thành viên'],
+  ['bac-si.html', 'Bác sĩ'],
   ['lien-he.html', 'Liên hệ'],
 ];
 
@@ -155,6 +219,28 @@ const tokens = {
   '{{LOC2}}': site.locations[1].name + ', ' + site.locations[1].address,
   '{{FORM_ENDPOINT}}': site.formEndpoint,
   '{{YEAR}}': String(new Date().getFullYear()),
+  '{{OFFER_NOTE}}': offerNote,
+  '{{OFFER_TAG}}': promo.approved ? '' : ' <em class="v3-tag">(đề xuất)</em>',
+  '{{LEGAL_BLOCK}}': legalBlock,
+  '{{NC_DISCOUNT}}': promo.newClient.discount + '%',
+  '{{NC_ROWS}}': renderNewClientRows(),
+  '{{LIGHT_MAX}}': dong(promo.light.maxPrice * 1000),
+  '{{LIGHT_MENU}}': renderLightMenu(),
+  '{{MEMBER_MONTHLY}}': dong(promo.membership.monthly),
+  '{{MEMBER_QUARTERLY}}': dong(promo.membership.quarterly),
+  '{{MEMBER_DISCOUNT}}': promo.membership.discount + '%',
+  '{{MEMBER_SEATS}}': String(promo.membership.pilotSeats),
+  '{{MEMBER_QBONUS}}': promo.membership.quarterBonus,
+  '{{MEMBER_ANNIV}}': promo.membership.anniversary,
+  '{{MEMBER_CANCEL}}': promo.membership.cancel,
+  '{{REF_REWARD}}': dong(promo.referral.reward),
+  '{{TET_NAME}}': promo.tet.name,
+  '{{TET_OPEN}}': promo.tet.openFrom,
+  '{{TET_STEPS}}': renderTetSteps(),
+  '{{INST_MIN}}': dong(promo.installment.minPackage),
+  '{{INST_PARTS}}': promo.installment.parts,
+  '{{INST_PACKAGES}}': renderInstallPackages(),
+  '{{GIFT_CARDS}}': promo.giftCards.map(dong).join(' · '),
 };
 const fill = (html) => Object.entries(tokens).reduce((s, [k, v]) => s.split(k).join(v), html);
 
@@ -185,12 +271,15 @@ for (const file of readdirSync('src/pages').filter((f) => f.endsWith('.html'))) 
 for (const v of ['v2', 'v3']) {
   const vPartial = (name) => readFileSync(join(`src/${v}/partials`, name), 'utf8');
   mkdirSync(`dist/${v}`, { recursive: true });
-  for (const file of readdirSync('src/pages').filter((f) => f.endsWith('.html'))) {
-    const own = join(`src/${v}/pages`, file);
+  const ownDir = `src/${v}/pages`;
+  const files = new Set([...readdirSync('src/pages'), ...(existsSync(ownDir) ? readdirSync(ownDir) : [])].filter((f) => f.endsWith('.html')));
+  const items = v === 'v3' ? navV3 : navItems;
+  for (const file of files) {
+    const own = join(ownDir, file);
     const raw = readFileSync(existsSync(own) ? own : join('src/pages', file), 'utf8');
     const meta = JSON.parse(raw.match(/<!--meta(.*?)-->/s)[1]);
     const body = raw.replace(/<!--meta.*?-->/s, '');
-    const nav = navItems
+    const nav = items
       .map(([href, label]) => `<li><a href="${href}"${href === file ? ' aria-current="page"' : ''}>${label}</a></li>`)
       .join('');
     const html = fill(

@@ -8,8 +8,8 @@
     <h1>Làn da khỏe từ gốc, <em>điều trị đúng tầng, đúng nguyên nhân</em></h1>
     <p class="v3-hero-lead">Mỗi làn da có một nguyên nhân riêng. Bác sĩ DONA thăm khám, giải thích rõ tình trạng và xây dựng phác đồ cho riêng bạn trước khi bắt đầu điều trị.</p>
     <div class="v3-row">
-      <a class="v3-btn v3-btn-gold" href="#dat-lich">Đặt lịch tư vấn</a>
-      <a class="v3-btn v3-btn-ghost" href="#dich-vu">Khám phá dịch vụ</a>
+      <a class="v3-btn v3-btn-gold" href="uu-dai-khach-moi.html">Ưu đãi buổi đầu tiên</a>
+      <a class="v3-btn v3-btn-ghost" href="#dat-lich">Đặt lịch tư vấn</a>
     </div>
   </div>
 </section>
@@ -23,6 +23,20 @@
     <p>Bảng giá <b>công khai</b></p>
     <p>Phòng khám An Khang · GP số <b>{{CLINIC_LICENSE}}</b></p>
   </div>
+</section>
+
+<!-- Thang khách hàng -->
+<section class="wrap v3-section v3-ladder-wrap">
+  <div class="v3-center-head">
+    <p class="v3-kicker">Bắt đầu cùng DONA</p>
+    <h2>Từ buổi thử đầu tiên đến thói quen chăm da mỗi tháng</h2>
+  </div>
+  <ol class="v3-ladder">
+    <li><a href="uu-dai-khach-moi.html"><span class="v3-ladder-no">01</span><b>Buổi đầu tiên</b><span>Khám, soi da cùng bác sĩ, giảm {{NC_DISCOUNT}} một dịch vụ{{OFFER_TAG}}</span><em>Xem ưu đãi →</em></a></li>
+    <li><a href="lieu-trinh-nhe.html"><span class="v3-ladder-no">02</span><b>Liệu trình nhẹ</b><span>30–60 phút, dưới {{LIGHT_MAX}}, bác sĩ hẹn buổi sau cho bạn</span><em>Xem menu →</em></a></li>
+    <li><a href="thanh-vien.html"><span class="v3-ladder-no">03</span><b>Thẻ thành viên</b><span>Nạp {{MEMBER_MONTHLY}} mỗi tháng, dùng dần, giảm {{MEMBER_DISCOUNT}}{{OFFER_TAG}}</span><em>Xem quyền lợi →</em></a></li>
+    <li><a href="gioi-thieu-ban-be.html"><span class="v3-ladder-no">04</span><b>Giới thiệu bạn bè</b><span>Bạn bè có ưu đãi, bạn nhận {{REF_REWARD}} vào tài khoản{{OFFER_TAG}}</span><em>Cách giới thiệu →</em></a></li>
+  </ol>
 </section>
 
 <!-- Giới thiệu -->
@@ -101,24 +115,43 @@
   </div>
 </section>
 
-<!-- Câu chuyện DONA -->
-<section class="wrap v3-story">
-  <div class="v3-story-logo"><img src="../assets/img/logo-dona-teal.png" alt="Logo Thẩm mỹ DONA" width="527" height="636" loading="lazy"></div>
-  <div>
-    <p class="v3-kicker">Vì sao là DONA</p>
-    <h2>Một phòng khám nhỏ, một bác sĩ theo bạn từ đầu đến cuối</h2>
-    <p>Ở DONA, người khám đầu tiên cũng là người theo dõi bạn qua từng buổi điều trị. Bác sĩ hỏi bệnh sử, thói quen chăm da và các điều trị trước đó, rồi giải thích nguyên nhân, phương pháp, số buổi dự kiến và chi phí trước khi bắt đầu.</p>
-    <a class="v3-link" href="ve-dona.html">Câu chuyện của DONA →</a>
+<!-- Liệu trình nhẹ -->
+<section class="wrap v3-section">
+  <div class="v3-head-row">
+    <div>
+      <p class="v3-kicker">Chăm da đều đặn</p>
+      <h2>Liệu trình nhẹ, dưới {{LIGHT_MAX}} một buổi</h2>
+    </div>
+    <a class="v3-link" href="lieu-trinh-nhe.html">Xem đầy đủ →</a>
   </div>
+  <ul class="v3-light-list">{{LIGHT_MENU}}</ul>
 </section>
 
-<!-- Combo -->
+<!-- Gói Tết -->
 <section id="uu-dai" class="v3-offer">
   <div class="wrap v3-offer-row">
     <div>
-{{COMBO_FEATURE}}
+      <p class="v3-kicker">Gói theo dịp · Mở đăng ký từ {{TET_OPEN}}</p>
+      <h2>{{TET_NAME}}</h2>
+      <p>Lộ trình 12 tuần do bác sĩ lên lịch ngược từ ngày Tết hoặc ngày cưới, để làn da đẹp nhất đúng dịp.</p>
     </div>
-    <a class="v3-btn" href="bang-gia.html#combo">Xem các combo</a>
+    <a class="v3-btn" href="goi-tet.html">Xem lộ trình</a>
+  </div>
+</section>
+
+<!-- Thành viên + giới thiệu -->
+<section class="wrap v3-section v3-pair">
+  <div class="v3-card v3-card-dark">
+    <p class="v3-kicker">Thẻ thành viên DONA{{OFFER_TAG}}</p>
+    <h2>Nạp theo tháng, dùng dần cho mọi dịch vụ</h2>
+    <p>Gói Tháng {{MEMBER_MONTHLY}}, gói Quý {{MEMBER_QUARTERLY}}. Toàn bộ tiền nạp vào tài khoản của bạn, giảm {{MEMBER_DISCOUNT}} dịch vụ và mỹ phẩm, hủy dễ qua Zalo.</p>
+    <a class="v3-btn v3-btn-gold" href="thanh-vien.html">Xem thẻ thành viên</a>
+  </div>
+  <div class="v3-card">
+    <p class="v3-kicker">Giới thiệu bạn bè{{OFFER_TAG}}</p>
+    <h2>Cả hai cùng có quà</h2>
+    <p>Bạn bè nhận ưu đãi khách mới, bạn nhận {{REF_REWARD}} vào tài khoản khi bạn bè hoàn thành buổi đầu. Mã giới thiệu chính là số điện thoại của bạn.</p>
+    <a class="v3-link" href="gioi-thieu-ban-be.html">Cách giới thiệu →</a>
   </div>
 </section>
 
@@ -247,7 +280,7 @@
     <div>
       <p class="v3-kicker">Đặt lịch tư vấn</p>
       <h2>Bắt đầu hành trình chăm da cùng DONA</h2>
-      <p>Để lại thông tin, phòng khám sẽ gọi lại xác nhận giờ hẹn. Hoặc liên hệ trực tiếp:</p>
+      <p>Để lại thông tin, phòng khám sẽ gọi lại xác nhận giờ hẹn. Khách mới được khám, soi da cùng bác sĩ và giảm {{NC_DISCOUNT}} một dịch vụ đầu tiên. Gói từ {{INST_MIN}} có thể <a class="v3-on-dark-link" href="thanh-toan.html">trả theo buổi</a>.</p>
       <div class="v3-row">
         <a class="v3-btn v3-btn-ghost" href="tel:{{HOTLINE_TEL}}">Gọi {{HOTLINE}}</a>
         <a class="v3-btn v3-btn-ghost" href="{{ZALO_OA}}" target="_blank" rel="noopener">Chat Zalo</a>
@@ -268,10 +301,13 @@
       <div class="field">
         <label for="van_de">Vấn đề bạn quan tâm</label>
         <select id="van_de" name="van_de">
+          <option>Ưu đãi khách mới (buổi đầu)</option>
           <option>Mụn, thâm, sẹo</option>
           <option>Nám, tàn nhang, sắc tố</option>
           <option>Lão hóa, trẻ hóa da</option>
           <option>Triệt lông, xóa xăm, phun xăm</option>
+          <option>Gói Rạng rỡ đón Tết / cô dâu</option>
+          <option>Đăng ký thẻ thành viên</option>
           <option>Chưa rõ, cần bác sĩ tư vấn</option>
         </select>
       </div>
@@ -282,6 +318,10 @@
           <option>Cơ sở 2 – Phòng khám An Khang, An Lạc</option>
           <option>Cơ sở nào cũng được</option>
         </select>
+      </div>
+      <div class="field">
+        <label for="gioi_thieu">Ai giới thiệu bạn? <span class="hint">(không bắt buộc)</span></label>
+        <input id="gioi_thieu" name="gioi_thieu" type="tel" inputmode="tel" placeholder="Số điện thoại người giới thiệu">
       </div>
       <div class="field">
         <label class="consent"><input type="checkbox" name="dong_y" id="dong_y"> Tôi đồng ý để Thẩm mỹ DONA dùng số điện thoại này liên hệ xác nhận lịch hẹn.</label>
