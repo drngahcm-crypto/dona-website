@@ -25,3 +25,8 @@ Trang tĩnh thuần HTML/CSS/JS, không cần thư viện ngoài. Chạy đượ
 - Logo chính trên web: **bản teal** (`src/assets/img/logo-mark-teal.png`, `logo-dona-teal.png`, bản trắng `logo-dona-white.png` cho nền tối) — xuất từ file Canva "LOGO DONA".
 - Bản vàng và hồng lưu ở `brand/`, chỉ dùng cho tình huống riêng (voucher, sự kiện, thiệp).
 - Ảnh BS Nga lấy từ file gốc 4000×6000 trên Drive, thu về 1000–1600px, có cả bản WebP.
+
+## Bản v2 (giao diện mới)
+- Xem tại `/v2/` — v1 vẫn giữ nguyên ở trang gốc.
+- v2 dùng chung dữ liệu (`src/data/`) và nội dung trang con với v1; chỉ khác khung giao diện (`src/v2/partials/`), trang chủ riêng (`src/v2/pages/index.html`) và `src/assets/css/v2.css`.
+- Muốn trang con nào có nội dung riêng cho v2: tạo file cùng tên trong `src/v2/pages/`.

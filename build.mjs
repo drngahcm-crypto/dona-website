@@ -69,6 +69,17 @@ function renderSocial(cls = '') {
     .join('')}</ul>`;
 }
 
+function renderPriceFrom() {
+  const items = prices.groups
+    .filter((g) => !g.hidden)
+    .map((g) => {
+      const vals = g.rows.map((r) => r[1]).filter((v) => typeof v === 'number');
+      return `<li><a href="bang-gia.html#${g.id}">${g.name}</a><span class="lead-dots"></span><b><small>từ</small> ${vnd(g.priceFrom ?? Math.min(...vals))}</b></li>`;
+    })
+    .join('');
+  return `<ul class="v2-price-list">${items}</ul>`;
+}
+
 function renderCombos() {
   return (prices.combos || [])
     .filter((c) => !c.hidden)
@@ -125,6 +136,7 @@ const tokens = {
   '{{PRICE_UPDATED}}': prices.updated,
   '{{COURSES}}': renderCourses(),
   '{{COMBOS}}': renderCombos(),
+  '{{PRICE_FROM}}': renderPriceFrom(),
   '{{SOCIAL}}': renderSocial(),
   '{{SOCIAL_DARK}}': renderSocial('on-dark'),
   '{{ZALO_OA}}': site.social.zaloOA,
@@ -158,6 +170,29 @@ for (const file of readdirSync('src/pages').filter((f) => f.endsWith('.html'))) 
       .replace('{{ROBOTS}}', DEMO ? '<meta name="robots" content="noindex, nofollow">' : '')
   );
   writeFileSync(join('dist', file), html);
+}
+
+// ---- Bản v2: giao diện mới ở /v2/, dùng chung dữ liệu và nội dung trang con với v1 ----
+const v2Partial = (name) => readFileSync(join('src/v2/partials', name), 'utf8');
+mkdirSync('dist/v2', { recursive: true });
+for (const file of readdirSync('src/pages').filter((f) => f.endsWith('.html'))) {
+  const own = join('src/v2/pages', file);
+  const raw = readFileSync(existsSync(own) ? own : join('src/pages', file), 'utf8');
+  const meta = JSON.parse(raw.match(/<!--meta(.*?)-->/s)[1]);
+  const body = raw.replace(/<!--meta.*?-->/s, '').replace(/(src|href|srcset)="assets\//g, '$1="../assets/');
+  const nav = navItems
+    .map(([href, label]) => `<li><a href="${href}"${href === file ? ' aria-current="page"' : ''}>${label}</a></li>`)
+    .join('');
+  const html = fill(
+    v2Partial('layout.html')
+      .replace('{{HEADER}}', v2Partial('header.html').replace('{{NAV}}', nav))
+      .replace('{{FOOTER}}', v2Partial('footer.html'))
+      .replace('{{BODY}}', body)
+      .replace('{{TITLE}}', meta.title)
+      .replace('{{DESCRIPTION}}', meta.description)
+      .replace('{{ROBOTS}}', '<meta name="robots" content="noindex, nofollow">')
+  ).replace(/(src|href|srcset)="assets\//g, '$1="../assets/');
+  writeFileSync(join('dist/v2', file), html);
 }
 
 writeFileSync('dist/robots.txt', DEMO ? 'User-agent: *\nDisallow: /\n' : `User-agent: *\nAllow: /\nSitemap: ${site.domain}/sitemap.xml\n`);

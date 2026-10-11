@@ -117,7 +117,8 @@
           null,
           null
         ]
-      ]
+      ],
+      "priceFrom": 250
     },
     {
       "id": "mun",
@@ -469,7 +470,8 @@
           1500,
           null
         ]
-      ]
+      ],
+      "priceFrom": 200
     },
     {
       "id": "peel-body",
