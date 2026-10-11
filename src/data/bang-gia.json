@@ -1,0 +1,170 @@
+{
+  "updated": "03/2026",
+  "_ghi_chu": "Giá tính bằng NGHÌN ĐỒNG (2500 = 2.500.000 đ). null = không có gói. Nhóm có hidden=true sẽ không hiển thị trên web.",
+  "groups": [
+    {
+      "id": "cham-soc-da", "name": "Chăm sóc da",
+      "columns": ["Lẻ / buổi", "Gói 3+1 / buổi", "Gói 5+2 / buổi", "Gói 10+5 / buổi"],
+      "rows": [
+        ["Chăm sóc da cơ bản", 250, 188, 179, 167],
+        ["Nâng cơ chống lão hóa", 450, 338, 321, 300],
+        ["Thanh lọc, detox da", 300, 225, 214, 200],
+        ["Điện di vitamin chống lão hóa", 350, 263, 250, 233],
+        ["Điện di vitamin C", 300, 225, 214, 200],
+        ["Làm dịu da kích ứng", 300, 225, 214, 200],
+        ["Phục hồi da nhạy cảm", 300, 225, 214, 200],
+        ["Tái tạo da mỏng yếu bằng collagen tươi", 500, 375, 357, 333],
+        ["Chăm sóc da mụn trung bình", 300, 225, 214, 200],
+        ["Chăm sóc da mụn nặng", 350, 263, 250, 233],
+        ["Phục hồi da cháy nắng, thâm sau viêm", 400, 300, 286, 267],
+        ["Nano collagen", 450, 338, 321, 300],
+        ["Phục hồi da tế bào gốc", 1000, 750, 714, 667],
+        ["Gội đầu thường", 100, null, null, null],
+        ["Gội đầu dưỡng sinh", 200, null, null, null]
+      ]
+    },
+    {
+      "id": "mun", "name": "Điều trị mụn",
+      "columns": ["Lẻ / buổi", "Gói 3+1 / buổi", "Gói 5+2 / buổi"],
+      "rows": [
+        ["Lấy nhân mụn trung bình", 300, 225, 214],
+        ["Lấy nhân mụn nặng", 350, 263, 250],
+        ["Peel mụn", 750, 563, 536],
+        ["Peel 3 lớp", 1500, 1125, 1071],
+        ["Peel tái tạo sâu", 5000, 3750, 3571],
+        ["Ánh sáng IPL / DPL", 300, 225, 214],
+        ["Giảm mụn viêm laser xung dài, dưới 5 nốt", 500, 375, 357],
+        ["Giảm mụn viêm laser xung dài, trên 5 nốt", 800, 600, 571],
+        ["Triệt nhờn xung dài + phân giải thâm", 1200, 900, 857],
+        ["Ánh sáng xung + carbon kiểm soát nhờn", 1500, 1125, 1071]
+      ]
+    },
+    {
+      "id": "nam-sac-to", "name": "Nám, sắc tố, tàn nhang",
+      "columns": ["Lẻ / buổi", "Gói 3+1 / buổi", "Gói 5+2 / buổi"],
+      "rows": [
+        ["Peel nám", 850, 638, 607],
+        ["Lăn kim nám", 1500, 1125, 1071],
+        ["Cryo nám", 1500, 1125, 1071],
+        ["Toning phân giải sắc tố", 1500, 1125, 1071],
+        ["Phân giải sắc tố đa tầng", 2500, 1875, 1786],
+        ["Tàn nhang dưới 10 nốt", 1000, 750, 714],
+        ["Tàn nhang dưới 20 nốt", 1500, 1125, 1071],
+        ["Tàn nhang trên 20 nốt", 2500, 1875, 1786]
+      ]
+    },
+    {
+      "id": "seo", "name": "Sẹo",
+      "columns": ["Lẻ / buổi", "Gói 3+1 / buổi", "Gói 5+2 / buổi"],
+      "rows": [
+        ["Sẹo lồi dưới 5 cm²", 525, 394, 375],
+        ["Sẹo lồi trên 5 cm²", 900, 675, 643],
+        ["Laser xung dài", 700, 525, 500],
+        ["Tách sẹo", 750, 563, 536],
+        ["Phi sẹo", 750, 563, 536],
+        ["Chấm sẹo đáy nhọn, lỗ chân lông to", 750, 563, 536],
+        ["Micro Fractional điểm sẹo", 1000, 750, 714],
+        ["Micro Fractional", 2000, 1500, 1429],
+        ["Micro Fractional peel", 2500, 1875, 1786],
+        ["Micro Fractional tái tạo đa tầng", 3000, 2250, 2143],
+        ["Peel sẹo", 1500, 1125, 1071],
+        ["Peel sâu", 5000, 3750, 3571]
+      ]
+    },
+    {
+      "id": "tre-hoa", "name": "Trẻ hóa da",
+      "columns": ["1 buổi", "Gói 3+1 / buổi", "Gói 5+2 / buổi"],
+      "rows": [
+        ["Nâng cơ RF toàn mặt", 3000, 2250, 2143],
+        ["Nâng cơ RF vùng mắt", 1000, 750, 714],
+        ["Cryo cấp ẩm", 1500, null, null],
+        ["Cryo kiểm soát nhờn", 1500, null, null],
+        ["Cryo trẻ hóa mắt", 1500, null, null],
+        ["Cryo căng bóng sáng da", 3000, null, null],
+        ["Cryo căng bóng chống lão hóa", 4000, null, null]
+      ],
+      "note": "Gói Cryo căng bóng: 5 buổi sáng da 13.000.000 đ (gốc 15.000.000 đ); 5 buổi chống lão hóa 18.000.000 đ (gốc 20.000.000 đ); 10 buổi sáng da 25.000.000 đ; 10 buổi chống lão hóa 35.000.000 đ."
+    },
+    {
+      "id": "tiem", "name": "Tiêm thẩm mỹ", "hidden": true,
+      "columns": ["Giá"],
+      "rows": [["Chờ cập nhật số giấy phép hoạt động và chứng chỉ hành nghề trước khi đăng", null]]
+    },
+    {
+      "id": "laser", "name": "Laser và đốt điện",
+      "columns": ["Lẻ", "Gói 3+1 / buổi", "Gói 5+2 / buổi"],
+      "rows": [
+        ["Đốt mụn thịt laser CO2, dưới 5 nốt", 400, 300, 286],
+        ["Đốt mụn thịt laser CO2, dưới 20 nốt", 1500, 1125, 1071],
+        ["Đốt mụn thịt laser CO2, toàn mặt", 2000, 1500, 1429],
+        ["Đốt mụn thịt đốt điện, dưới 5 nốt", 200, null, null],
+        ["Đốt mụn thịt đốt điện, dưới 20 nốt", 700, 525, 500],
+        ["Đốt nốt ruồi có bảo hành, nốt đầu tiên", 350, null, null],
+        ["Đốt nốt ruồi, từ nốt thứ hai", 50, null, null],
+        ["Giãn mạch dưới 5 mm", 500, 375, null],
+        ["Giãn mạch dưới 20 mm", 1250, 938, null],
+        ["Giãn mạch trên 20 mm", 2000, 1500, null]
+      ]
+    },
+    {
+      "id": "peel-body", "name": "Peel body",
+      "columns": ["Lẻ / buổi", "Gói 3+1 / buổi", "Gói 5+2 / buổi"],
+      "rows": [
+        ["Peel thâm nách", 750, 563, 536],
+        ["Peel 1/2 tay", 1500, 1125, 1071],
+        ["Peel thâm mông", 2500, 1875, 1786],
+        ["Peel nguyên tay", 3000, 2250, 2143],
+        ["Peel lưng", 3000, 2250, 2143]
+      ]
+    },
+    {
+      "id": "triet-long", "name": "Triệt lông",
+      "columns": ["1 buổi", "Liệu trình 6 buổi", "Gói 2 năm"],
+      "rows": [
+        ["Trán", 80, 300, 500],
+        ["Mép", 100, 400, 600],
+        ["Nách", 100, 350, 1000],
+        ["Gáy", 100, 500, 800],
+        ["Dọc rốn", 100, 500, 1000],
+        ["Mặt", 200, 1000, 1500],
+        ["Bụng", 200, 1000, 1500],
+        ["1/2 bikini", 200, 1000, 1500],
+        ["1/2 tay", 250, 1000, 1500],
+        ["Cả tay", 300, 1500, 2000],
+        ["1/2 chân", 300, 1500, 2000],
+        ["Lưng", 300, 1500, 2000],
+        ["Bikini", 300, 1500, 2000],
+        ["Cả chân", 400, 2000, 2500],
+        ["Toàn thân", 2400, 8850, 12500]
+      ]
+    },
+    {
+      "id": "xoa-xam", "name": "Xóa xăm",
+      "columns": ["Trải nghiệm 1 buổi", "Liệu trình 5 buổi", "Gói bảo hành"],
+      "rows": [
+        ["Chân mày", 499, 2000, 3000],
+        ["Hình xăm dưới 3 cm", 499, 1500, 2500],
+        ["Từ 3 đến dưới 5 cm", 599, 2000, 4000],
+        ["Từ 5 đến dưới 10 cm", 699, 3000, 5000],
+        ["Từ 11 đến dưới 19 cm", 1200, 5000, 10000],
+        ["Từ 20 đến dưới 30 cm", 1500, 6500, 13000],
+        ["Từ 30 đến dưới 40 cm", 2000, 8000, 20000]
+      ],
+      "note": "Hình xăm từ 40 cm trở lên: tư vấn trực tiếp."
+    },
+    {
+      "id": "phun-xam", "name": "Phun xăm thẩm mỹ",
+      "columns": ["Kỹ thuật Hàn", "Kỹ thuật Mỹ", "Kỹ thuật Đức"],
+      "rows": [
+        ["Phun mày Ombre", 1500, 2000, 2500],
+        ["Phun mày vi chạm", 2000, 2500, 3000],
+        ["Phun mày Shading", 2500, 3000, 3500],
+        ["Phun mày phong thủy", 4000, 4500, 5000],
+        ["Phun môi collagen", 2000, 2500, 3000],
+        ["Phun môi tự nhiên", 2500, 3000, 3500],
+        ["Phun môi châu Âu", 3000, 3500, 4000]
+      ],
+      "note": "Phun mí mở tròng 1.500.000 đ; phun mí eyeliner 2.000.000 đ."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "dona-website",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Website Thẩm mỹ DONA – trang tĩnh, không phụ thuộc thư viện",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "build:prod": "DEMO=false node build.mjs",
+    "dev": "node build.mjs && npx --yes serve dist -l 3000"
+  },
+  "engines": { "node": ">=18" }
+}

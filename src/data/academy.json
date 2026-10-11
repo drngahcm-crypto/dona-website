@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Điều trị mụn chuyên sâu",
+    "duration": "2 tháng",
+    "format": "9 buổi lý thuyết online + 1 buổi thực hành",
+    "teacher": "BS.CKI Đỗ Thị Nga",
+    "fee": "12.000.000 đ",
+    "summary": "Cơ chế bệnh sinh, điều trị theo từng giai đoạn mụn, thực hành kê toa, lấy nhân mụn chuẩn y khoa, peel và lăn kim trị mụn, xử lý mụn viêm và mụn bọc. Mỗi học viên thực hành 3–4 mẫu."
+  },
+  {
+    "name": "Mesotherapy",
+    "duration": "1 tuần",
+    "format": "1 buổi lý thuyết online + 1 buổi thực hành",
+    "teacher": "BS.CKI Đỗ Thị Nga",
+    "fee": "8.000.000 đ",
+    "summary": "Kỹ thuật meso trong điều trị mụn, nám, trẻ hóa và căng bóng; phòng ngừa và xử trí biến chứng.",
+    "requirement": "Dành cho học viên có chứng chỉ hành nghề phù hợp."
+  },
+  {
+    "name": "Spa cơ bản",
+    "duration": "19 bài",
+    "format": "Lý thuyết + thực hành tại phòng khám",
+    "teacher": "BS.CKI Đỗ Thị Nga",
+    "fee": "15.000.000 đ",
+    "summary": "Dược mỹ phẩm và routine tại nhà, làm sạch da đúng cách, quy trình chăm sóc da có và không trị liệu, kiểm soát nhiễm khuẩn, lấy nhân mụn, peel, massage thư giãn. Mỗi học viên thực hành 3–4 mẫu."
+  },
+  {
+    "name": "Spa chuyên sâu",
+    "duration": "35 bài",
+    "format": "Lý thuyết qua Zoom + thực hành",
+    "teacher": "BS.CKI Đỗ Thị Nga",
+    "fee": "50.000.000 đ",
+    "summary": "Thiết kế dịch vụ điều trị chuyên sâu tại spa, điều trị mụn cấp độ chuyên gia, phục hồi da nhạy cảm và da nhiễm corticoid, laser và IPL trong thẩm mỹ, PRP. Mỗi học viên thực hành 3–4 mẫu."
+  }
+]
