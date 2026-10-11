@@ -96,6 +96,8 @@ const tokens = {
   '{{ZALO_URL}}': site.zalo,
   '{{MAPS_URL}}': site.maps,
   '{{EMAIL}}': site.email,
+  '{{FB_CLINIC}}': site.social.facebookClinic,
+  '{{FB_DOCTOR}}': site.social.facebookDoctor,
   '{{CLINIC_NAME}}': site.clinic.name,
   '{{CLINIC_ADDRESS}}': site.clinic.address,
   '{{CLINIC_LICENSE}}': site.clinic.license,
